@@ -13,6 +13,7 @@ Although this structure can be wasteful, pages allows different configurations t
 
 ## Basic code
 ```sh
+#include <SPI.h>
 #include <IndioFram.h>
 IndioFram fram;
 
