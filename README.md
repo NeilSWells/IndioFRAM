@@ -83,4 +83,4 @@ void loop()
     
 Write functions return true if successful. Writes will fail if there is not enough space before the end of the page
 
-`fram.writeInt(0, 253, 42);` will fail because there is not enough room for the 4 bytes of an Int at address 253
+`fram.writeInt(0, 253, 42);` will return false because there is not enough room for the 4 bytes of an Int at address 253
