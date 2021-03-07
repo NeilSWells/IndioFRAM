@@ -4,9 +4,12 @@
 Access the 8k FRAM storage on the Ethernet Module.
 
 The library divides the memory into 32 pages of 256 bytes of storage.
+
 Page 0 to 31
+
 Address 0 to 255
-Although this structure can be wasteful, pages allows different configuration data to be stored in at the same addresses on different pages.
+
+Although this structure can be wasteful, pages allows different configurations to be stored at the same addresses on different pages.
 
 ## Basic code
 ```sh
