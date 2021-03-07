@@ -31,7 +31,7 @@ void setup()
     //Char array
     char textWrite[20] = "This is a FRAM test";
     char textRead[20];
-    fram.writeChar(0, 1, textWrite, 20); //Write to page 0, address 1
+    fram.writeChar(0, 1, textWrite, 20); //Write 20 chars of textWrite to page 0, address 1
     fram.readChar(0, 1, textRead, 20);
     SerialUSB.println(textRead);
 }
