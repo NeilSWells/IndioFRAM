@@ -40,3 +40,26 @@ void loop()
 
 }
 ```
+
+## Functions
+    void begin();
+    byte readByte(byte page, byte address);
+    bool writeByte(byte page, byte address, byte value);
+    void readChar(byte page, byte address, char *value, byte count);
+    void writeChar(byte page, byte address, char *value, byte count);
+    double readDouble(byte page, byte address);
+    bool writeDouble(byte page, byte address, double value);
+    float readFloat(byte page, byte address);
+    bool writeFloat(byte page, byte address, float value);
+    int readInt(byte page, byte address);
+    bool writeInt(byte page, byte address, int value);
+    long readLong(byte page, byte address);
+    bool writeLong(byte page, byte address, long value);
+    unsigned int readUnsignedInt(byte page, byte address);
+    bool writeUnsignedInt(byte page, byte address, unsigned int value);
+    unsigned long readUnsignedLong(byte page, byte address);
+    bool writeUnsignedLong(byte page, byte address, unsigned long value);
+    word readWord(byte page, byte address);
+    bool writeWord(byte page, byte address, word value);
+    
+    
