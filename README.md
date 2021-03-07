@@ -25,7 +25,7 @@ void setup()
     while (!SerialUSB);
 
     //Byte
-    fram.writeByte(0, 0 , 42); //Write to page 0, address 0
+    fram.writeByte(0, 0 , 42); //Write 42 to page 0, address 0
     SerialUSB.println(fram.readByte(0, 0));
 
     //Char array
