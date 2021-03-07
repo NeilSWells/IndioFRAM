@@ -42,13 +42,17 @@ void loop()
 ```
 
 ## Functions
-    void begin();
-    byte readByte(byte page, byte address);
-    bool writeByte(byte page, byte address, byte value);
-    void readChar(byte page, byte address, char *value, byte count);
-    void writeChar(byte page, byte address, char *value, byte count);
-    double readDouble(byte page, byte address);
-    bool writeDouble(byte page, byte address, double value);
+    begin();
+    
+    byte = readByte(page, address);
+    bool = writeByte(page, address, byte);
+    
+    readChar(page, address, char, count);
+    writeChar(page, address, char, count);
+    
+    double = readDouble(page, address);
+    bool = writeDouble(page, address, double);
+    
     float readFloat(byte page, byte address);
     bool writeFloat(byte page, byte address, float value);
     int readInt(byte page, byte address);
