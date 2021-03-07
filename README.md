@@ -44,26 +44,40 @@ void loop()
 ## Functions
     begin();
     
+    //Byte = 1 byte
     byte = readByte(page, address);
     bool = writeByte(page, address, byte);
     
+    //Char = count bytes
     readChar(page, address, char, count);
     writeChar(page, address, char, count);
     
+    //Double = 8 bytes
     double = readDouble(page, address);
     bool = writeDouble(page, address, double);
     
+    //Float = 4 bytes
     float readFloat(byte page, byte address);
     bool writeFloat(byte page, byte address, float value);
-    int readInt(byte page, byte address);
-    bool writeInt(byte page, byte address, int value);
-    long readLong(byte page, byte address);
-    bool writeLong(byte page, byte address, long value);
-    unsigned int readUnsignedInt(byte page, byte address);
-    bool writeUnsignedInt(byte page, byte address, unsigned int value);
-    unsigned long readUnsignedLong(byte page, byte address);
-    bool writeUnsignedLong(byte page, byte address, unsigned long value);
-    word readWord(byte page, byte address);
-    bool writeWord(byte page, byte address, word value);
+    
+    //Int = 4 bytes
+    int = readInt(page, address);
+    bool = writeInt(page, address, int);
+    
+    //Long = 4 bytes
+    long = readLong(page, address);
+    bool = writeLong(page, address, long);
+    
+    //Unsigned Int = 4 bytes
+    unsigned int = readUnsignedInt(page, address);
+    bool = writeUnsignedInt(page, address, unsigned int);
+    
+    //Unsigned Long = 4 bytes
+    unsigned long = readUnsignedLong(page, address);
+    bool = writeUnsignedLong(page, address, unsigned long);
+    
+    //Word = 2 bytes
+    word = readWord(page, address);
+    bool = writeWord(page, address, word);
     
     
