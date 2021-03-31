@@ -219,6 +219,49 @@ bool IndioFram::writeWord(byte page, byte address, word value)
     return writeRange(page, address, byteValue, SIZE_WORD);
 }
 
+
+void IndioFram::clearPage(byte page)
+{
+    if (page > MAX_PAGE) return;
+    digitalWrite(FRAM_PIN, LOW);
+    SPI.transfer(OP_CODE_WREN);
+    digitalWrite(FRAM_PIN, HIGH);
+    digitalWrite(FRAM_PIN, LOW);
+    SPI.transfer(OP_CODE_WRITE);
+    SPI.transfer(page);
+    SPI.transfer(0x00);
+    for (word w = 0; w < 256; w++) SPI.transfer(0x00);
+    digitalWrite(FRAM_PIN, HIGH);
+}
+
+
+void IndioFram::copyPage(byte pageTo, byte pageFrom)
+{
+    byte value;
+    if (pageTo > MAX_PAGE || pageFrom > MAX_PAGE || pageTo == pageFrom) return;
+    for (word w = 0; w < 256; w++)
+    {
+        //Read byte
+        digitalWrite(FRAM_PIN, LOW);
+        SPI.transfer(OP_CODE_READ);
+        SPI.transfer(pageFrom);
+        SPI.transfer(w);
+        value = SPI.transfer(0x00);
+        digitalWrite(FRAM_PIN, HIGH);
+        //Write byte
+        digitalWrite(FRAM_PIN, LOW);
+        SPI.transfer(OP_CODE_WREN);
+        digitalWrite(FRAM_PIN, HIGH);
+        digitalWrite(FRAM_PIN, LOW);
+        SPI.transfer(OP_CODE_WRITE);
+        SPI.transfer(pageTo);
+        SPI.transfer(w);
+        SPI.transfer(value);
+        digitalWrite(FRAM_PIN, HIGH);
+    }
+}
+
+
 //Private
 bool IndioFram::readRange(byte page, byte address, byte * value, byte count)
 {
