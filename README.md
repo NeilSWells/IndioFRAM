@@ -34,6 +34,7 @@ void setup()
     fram.writeChar(0, 1, textWrite, 20); //Write 20 chars of textWrite to page 0, address 1
     fram.readChar(0, 1, textRead, 20);
     SerialUSB.println(textRead);
+    fram.copyPage(31,0); //Backup all 256 bytes of page 0 to page 31
 }
 
 void loop()
