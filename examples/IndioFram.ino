@@ -2,6 +2,7 @@
 IndioFram fram;
 
 const byte FRAM_PAGE = 31;
+const byte FRAM_BACKUP_PAGE = 30;
 
 void setup()
 {
@@ -36,6 +37,9 @@ void setup()
     float f = 1.4142136;
     fram.writeFloat(FRAM_PAGE, 27, f);
     SerialUSB.println(fram.readFloat(FRAM_PAGE, 27), 7);
+    
+    //Backup page 31 to page 30
+    fram.copyPage(FRAM_BACKUP_PAGE, FRAM_PAGE);
 }
 
 void loop()
