@@ -45,6 +45,8 @@ class IndioFram
         bool writeUnsignedLong(byte page, byte address, unsigned long value);
         word readWord(byte page, byte address);
         bool writeWord(byte page, byte address, word value);
+        void clearPage(byte page);
+        void copyPage(byte pageTo, byte pageFrom);
     private:
         bool readRange(byte page, byte address, byte * value, byte count);
         bool writeRange(byte page, byte address, byte * value, byte count);
