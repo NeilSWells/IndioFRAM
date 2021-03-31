@@ -29,3 +29,5 @@ readUnsignedLong	KEYWORD2
 writeUnsignedLong	KEYWORD2
 readWord	KEYWORD2
 writeWord	KEYWORD2
+clearPage KEYWORD2
+copyPage  KEYWORD2
